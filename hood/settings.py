@@ -36,8 +36,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'cloudinary',
+    'crispy_forms',
 
     'hoodapp.apps.HoodappConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -120,6 +122,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = 'hoodapp-home'
+LOGIN_URL = 'login'
 
 #Cloudinary initialization
 cloudinary.config(
