@@ -8,6 +8,9 @@ from django.views.generic.edit import FormMixin
 from .forms import uploadForm
 from .models import  Post, Profile
 
+def homepage(request):
+    return render(request, 'hoodapp/homepage.html')
+
 def home(request):
     context = {
         'posts': Post.objects.all()

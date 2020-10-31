@@ -5,6 +5,7 @@ from hoodapp.views import (PostDetailView,PostDeleteView)
 
 urlpatterns = [
     path('', views.home, name='hoodapp-home'),
+    path('homepage/', views.homepage, name='hoodapp-homepage'),
     path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
     path('post/new/', views.new_post, name='post-create'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
