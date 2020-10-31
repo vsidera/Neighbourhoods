@@ -57,3 +57,8 @@ class Post(models.Model):
     profile = models.ForeignKey('Profile', on_delete=models.CASCADE)
     hood=models.ForeignKey('Neighbourhood',on_delete=models.CASCADE)
 
+    @classmethod
+    def search_by_title(cls,search_term):
+        found_projects = cls.objects.filter(title__icontains=search_term)
+        return found_projects
+

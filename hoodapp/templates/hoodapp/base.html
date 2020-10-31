@@ -17,9 +17,9 @@
 
 
     {% if title %}
-        <title>vprojects - {{ title }}</title>
+        <title>neighbourhoods - {{ title }}</title>
     {% else %}
-        <title>vprojects</title>
+        <title>neighbourhoods</title>
     {% endif %}
 </head>
 <body>
@@ -34,11 +34,21 @@
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{% url 'hoodapp-home' %}"><i class="fa fa-home" aria-hidden="true"></i></a>
             </div>
-       
+             <!-- Adding a search form  -->
+            <div class="search">
+              <form role="search" action="{% url 'search_results' %}">
+
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search Project" name="project">
+                </div>
+
+              </form>
+            </div>  
+            <!-- search form end -->
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
                 {% if user.is_authenticated %}
-                 
+                  <a class="nav-item nav-link" href="{% url 'post-create' %}"><i class="fa fa-paper-plane" aria-hidden="true"></i></a>
                   <a class="nav-item nav-link" href="{% url 'profile' %}"><i class="fa fa-user" aria-hidden="true"></i></a>
                   <a class="nav-item nav-link" href="{% url 'logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
                 {% else %}
