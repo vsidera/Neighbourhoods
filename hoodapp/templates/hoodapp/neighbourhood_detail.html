@@ -1,0 +1,63 @@
+{% extends "hoodapp/base.html" %}
+{% block content %}
+    
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <table id="customers">
+            <tr>
+              <th>BUSINESSES</th>              
+            </tr>
+            <tr>
+              <td> Cali's Laundry <p class="text-muted">fb page:Calis Laundy</p></td>
+              
+            </tr>
+            <tr>
+              <td> Usafi Butchery <p class="text-muted">call:254711234568</p></td>
+              
+            </tr>
+            <tr>
+              <td> Classic Cyber <p class="text-muted">xcyber@gmail.com</p></td>
+              
+            </tr>
+            
+          </table>
+          <hr>
+          <b>EMERGENCY SERVICES</b> 
+         
+          <h6> <b>Police</b> </h6>
+          Call : 911 <br>
+          Email : police@milimani.com <br>
+          Location : Kona Mbaya, 120m from Elimu Primary
+           <hr>
+           <h6> <b>Hospital</b> </h6>
+          Call : 912 <br>
+          Email : hospitali@milimani.com <br>
+          Location : Afya Bora, 200m East of Shopping Centre
+           <br>
+           <div class="LeaveButton">
+          <a class="btn btn-danger btn-sm mt-1 mb-1" href="#">LEAVE HOOD</a>
+          </div>          
+        </div>
+        <div class="col-md-6">
+          <img src="{{hood.picture.url}}" alt="Avatar" style="width:100%">
+        </div>
+        <div class="col-md-3">
+          <a class="nav-item nav-link" href="{% url 'post-create' %}"><i class="fa fa-paper-plane" aria-hidden="true"></i> Post to Hood</a>
+          {% for post in posts %}
+          <div class="post-tem">
+          <article class="media content-section">           
+            <div class="media-body">
+              <div class="article-metadata">
+                <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+              </div>
+              <h5><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h5>
+              <p class="article-content">{{ post.description }}</p>
+            </div>
+          </article>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+{% endblock content %}

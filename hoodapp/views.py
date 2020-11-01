@@ -6,19 +6,20 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (DetailView, UpdateView, DeleteView)
 from django.views.generic.edit import FormMixin
 from .forms import uploadForm
-from .models import  Post, Profile
-
-def homepage(request):
-    return render(request, 'hoodapp/homepage.html')
+from .models import  Post, Profile, Neighbourhood
 
 def home(request):
     context = {
-        'posts': Post.objects.all()
+        'hoods': Neighbourhood.objects.all()
     }
+    
     return render(request, 'hoodapp/home.html', context)
 
 class PostDetailView(DetailView):
     model = Post
+
+class HoodDetailView(DetailView):
+    model = Neighbourhood
 
 @login_required(login_url='/login/')
 def new_post(request):
