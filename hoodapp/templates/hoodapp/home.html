@@ -64,24 +64,24 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-1">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-10">
           {% for post in posts %}
-          <div class="proj-item">
-            <article class="media content-section">
-              <div class="media-body">
-                <div class="article-metadata">
-                  <h5><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h5>
-                  <small class="text-mute">{{ post.created_on }}</small>
-                </div>
-                <img src="{{post.image.url}}" alt="Avatar" style="width:100%">
+          <div class="post-tem">
+          <article class="media content-section">           
+            <div class="media-body">
+              <div class="article-metadata">
+                <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
               </div>
-            </article>
-          </div>  
+              <h5><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h5>
+              <p class="article-content">{{ post.description }}</p>
+            </div>
+          </article>
+          </div>
           {% endfor %}
         </div>
-        <div class="col-md-2">
+        <div class="col-md-1">
         </div>
       </div>
     </div>

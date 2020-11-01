@@ -97,17 +97,6 @@ body {
     padding: 2px 16px;
   }
 
-  .col-md-8{
-    display: flex;
-    flex-wrap: wrap;
-   }
-
-  .proj-item{
-    flex-direction: row;
-    width: 48%;
-    padding: 2px;
-  }
-
   #customers {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
