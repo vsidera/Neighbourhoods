@@ -20,28 +20,11 @@
               <td> Classic Cyber <p class="text-muted">xcyber@gmail.com</p></td>
               
             </tr>
-            <tr>
-              <td> Ken's Cafe <p class="text-muted">twitter: @kenscafe</p></td>
-              
-            </tr>
-            <tr>
-              <td> King's Cabs<p class="text-muted">call:254711234567</p></td>
-              
-            </tr>
-            <tr>
-              <td> sidi's collection<p class="text-muted">www.sidi's.com</p></td>
-              
-            </tr>
             
           </table>
-          
-        </div>
-        <div class="col-md-6">
-          <img src="/media/hoodimages/hood1.jpeg" alt="Avatar" style="width:100%">
-        </div>
-        <div class="col-md-3">
-          <b>EMERGENCY SERVICES</b> 
           <hr>
+          <b>EMERGENCY SERVICES</b> 
+         
           <h6> <b>Police</b> </h6>
           Call : 911 <br>
           Email : police@milimani.com <br>
@@ -51,22 +34,15 @@
           Call : 912 <br>
           Email : hospitali@milimani.com <br>
           Location : Afya Bora, 200m East of Shopping Centre
-           <hr>
-           <h6> <b>Fire Brigade</b> </h6>
-          Call : 913 <br>
-          Email : zimamoto@milimani.com <br>
-          Location : Town Centre, Opp Oficce of MCA
+           <br>
+           <div class="LeaveButton">
+          <a class="btn btn-danger btn-sm mt-1 mb-1" href="#">LEAVE HOOD</a>
+          </div>          
         </div>
-      </div>
-    </div>
-
-
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-1">
+        <div class="col-md-6">
+          <img src="/media/hoodimages/hood1.jpeg" alt="Avatar" style="width:100%">
         </div>
-        <div class="col-md-10">
+        <div class="col-md-3">
           {% for post in posts %}
           <div class="post-tem">
           <article class="media content-section">           
@@ -81,9 +57,6 @@
           </div>
           {% endfor %}
         </div>
-        <div class="col-md-1">
-        </div>
       </div>
     </div>
-    
 {% endblock content %}
