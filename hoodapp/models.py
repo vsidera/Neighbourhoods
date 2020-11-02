@@ -22,6 +22,7 @@ class Profile(models.Model):
     photo = models.ImageField(default='default.png', upload_to='avatars/')
     bio = models.TextField(max_length=500, blank=True, default=f'Hello, I am new here!')
     contacts = models.TextField(max_length=250, blank=True)
+    hoodname = models.TextField(max_length=250, blank=True) 
 
     def __str__(self):
         return f'{self.user.username} profile'

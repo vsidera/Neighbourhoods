@@ -5,9 +5,10 @@
 
         <div class="hood-item">
         <div class="card">
+            <h4><b>{{ hood.name }}</b></h4> 
             <img src="{{hood.picture.url}}" alt="Avatar" style="width:100%">
             <div class="container">
-                <h4><b>{{ hood.name }}</b></h4> 
+                
                 <h5><a class="article-title" href="{% url 'hood-detail' hood.id %}">Join Neighbourhood</a></h5>
             </div>
         </div>
