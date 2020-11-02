@@ -40,10 +40,11 @@
           </div>          
         </div>
         <div class="col-md-6">
-          <img src="{{hood.picture.url}}" alt="Avatar" style="width:100%">
+          <img src="{{object.picture.url}}" alt="Avatar" style="width:100%">
         </div>
         <div class="col-md-3">
           <a class="nav-item nav-link" href="{% url 'post-create' %}"><i class="fa fa-paper-plane" aria-hidden="true"></i> Post to Hood</a>
+          
           {% for post in posts %}
           <div class="post-tem">
           <article class="media content-section">           

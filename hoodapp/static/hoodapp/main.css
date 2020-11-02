@@ -123,3 +123,14 @@ body {
   .LeaveButton{
     padding-top: 40px;
   }
+
+  .home{
+    display: flex;
+    flex-wrap: wrap;
+   }
+
+  .hood-item{
+    flex-direction: row;
+    width: 33%;
+    padding: 2px;
+  }
