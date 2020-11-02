@@ -6,7 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (DetailView, UpdateView, DeleteView)
 from django.views.generic.edit import FormMixin
 from .forms import uploadForm
-from .models import  Post, Profile, Neighbourhood
+from .models import  Post, Profile, Neighbourhood, Business
 
 def home(request):
     context = {
@@ -15,8 +15,16 @@ def home(request):
     
     return render(request, 'hoodapp/home.html', context)
 
+def posts(request):
+    context = {
+        'posts': Post.objects.all()
+    }
+    
+    return render(request, 'hoodapp/posts.html', context)
+
 class PostDetailView(DetailView):
     model = Post
+    model = Business
 
 class HoodDetailView(DetailView):
     model = Neighbourhood

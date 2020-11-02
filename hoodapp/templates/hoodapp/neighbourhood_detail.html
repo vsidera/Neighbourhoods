@@ -4,6 +4,13 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-3">
+          <h4><b>{{ object.name }}</b></h4>
+          The neighbourhood of {{ object.name }} located in the leafy surburbs of {{ object.location }}
+          has a population of {{ object.population }} .It is a serene environment and has the best 
+          security and social amenities that a neighbourhood has to offer.
+
+          <hr>
+
           <table id="customers">
             <tr>
               <th>BUSINESSES</th>              
@@ -23,6 +30,14 @@
             
           </table>
           <hr>
+          
+        </div>
+        <div class="col-md-6">
+          <img src="{{object.picture.url}}" alt="Avatar" style="width:100%">
+        </div>
+        <div class="col-md-3">
+          <a class="nav-item nav-link" href="{% url 'hood-post' %}"><i class="fa fa-paper-plane" aria-hidden="true"></i> View the latest posts</a>
+          
           <b>EMERGENCY SERVICES</b> 
          
           <h6> <b>Police</b> </h6>
@@ -38,26 +53,6 @@
            <div class="LeaveButton">
           <a class="btn btn-danger btn-sm mt-1 mb-1" href="#">LEAVE HOOD</a>
           </div>          
-        </div>
-        <div class="col-md-6">
-          <img src="{{object.picture.url}}" alt="Avatar" style="width:100%">
-        </div>
-        <div class="col-md-3">
-          <a class="nav-item nav-link" href="{% url 'post-create' %}"><i class="fa fa-paper-plane" aria-hidden="true"></i> Post to Hood</a>
-          
-          {% for post in posts %}
-          <div class="post-tem">
-          <article class="media content-section">           
-            <div class="media-body">
-              <div class="article-metadata">
-                <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
-              </div>
-              <h5><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h5>
-              <p class="article-content">{{ post.description }}</p>
-            </div>
-          </article>
-          </div>
-          {% endfor %}
         </div>
       </div>
     </div>
