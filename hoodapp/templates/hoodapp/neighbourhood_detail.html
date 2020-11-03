@@ -1,4 +1,5 @@
 {% extends "hoodapp/base.html" %}
+{% load static %}
 {% block content %}
     
     <div class="container-fluid">
@@ -10,7 +11,11 @@
           security and social amenities that a neighbourhood has to offer.
 
           <hr>
-
+          {% for hood in hoods %}
+          Name: {{ object.name }}, Area: {{ object.business.all|join:", " }}
+          {% endfor %}
+         
+      
           <table id="customers">
             <tr>
               <th>BUSINESSES</th>              
@@ -27,6 +32,14 @@
               <td> Classic Cyber <p class="text-muted">xcyber@gmail.com</p></td>
               
             </tr>
+            <tr>
+              <td> Ken's Cabs <p class="text-muted">call:254711234568</p></td>
+              
+            </tr>
+            <tr>
+              <td> Fabs Delicacies <p class="text-muted">xcyber@gmail.com</p></td>
+              
+            </tr>
             
           </table>
           <hr>
@@ -38,7 +51,7 @@
         <div class="col-md-3">
           <a class="nav-item nav-link" href="{% url 'hood-post' %}"><i class="fa fa-paper-plane" aria-hidden="true"></i> View the latest posts</a>
           <hr>
-          <b>EMERGENCY SERVICES</b> 
+          <h5>EMERGENCY SERVICES</h5>
          
           <h6> <b>Police</b> </h6>
           Call : 911 <br>
@@ -50,8 +63,13 @@
           Email : hospitali@milimani.com <br>
           Location : Afya Bora, 200m East of Shopping Centre
            <br>
+           <hr>
+           <h6> <b>Fire Brigade</b> </h6>
+          Call : 913 <br>
+          Email : fire@milimani.com <br>
+          Location : Shopping Center
            <div class="LeaveButton">
-          <a class="btn btn-danger btn-sm mt-1 mb-1" href="#">LEAVE HOOD</a>
+          <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'hoodapp-home' %}">LEAVE HOOD</a>
           </div>          
         </div>
       </div>

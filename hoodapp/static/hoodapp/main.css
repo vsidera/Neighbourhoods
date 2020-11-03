@@ -13,7 +13,15 @@ body {
   }
   
   .bg-steel {
-    background-color: #5f788a;
+    background-color: #900C3F;
+  }
+
+  h4{
+    color: #900C3F;
+  }
+
+  h5{
+    color: #900C3F;
   }
   
   .site-header .navbar-nav .nav-link {
@@ -37,7 +45,7 @@ body {
   }
   
   .article-title {
-    color: #444444;
+    color: #900C3F;
   }
   
   a.article-title:hover {
@@ -116,12 +124,12 @@ body {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color: #900C3F;
     color: white;
   }
 
   .LeaveButton{
-    padding-top: 40px;
+    padding-top: 200px;
   }
 
   .home{

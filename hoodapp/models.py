@@ -9,6 +9,8 @@ class Neighbourhood(models.Model):
     location=models.CharField(max_length=60)
     population=models.IntegerField()
     picture=CloudinaryField('image')
+    business = models.ManyToManyField('Business')
+    
 
     def create_neigborhood(self):
         self.save()
@@ -23,6 +25,7 @@ class Profile(models.Model):
     bio = models.TextField(max_length=500, blank=True, default=f'Hello, I am new here!')
     contacts = models.TextField(max_length=250, blank=True)
     hoodname = models.TextField(max_length=250, blank=True) 
+
 
     def __str__(self):
         return f'{self.user.username} profile'
@@ -41,8 +44,8 @@ class Business(models.Model):
     name=models.CharField(max_length=60)
     description=models.CharField(max_length=200)
     user=models.ForeignKey(User,on_delete=models.CASCADE)
-    neighborhood=models.ForeignKey('Neighbourhood',on_delete=models.CASCADE)
     email=models.EmailField()
+    
 
     def create_business(self):
         self.save()
