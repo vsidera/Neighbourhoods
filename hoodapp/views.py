@@ -38,7 +38,7 @@ def new_post(request):
                 post = form.save(commit=False)
                 post.profile = current_user
                 post.save()
-            return redirect('hoodapp-home')
+            return redirect('hood-post')
         else:
             form = uploadForm()
         return render(request, 'hoodapp/post_form.html', {'form':form})
